@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const activeStyle = "underline underline-offset-4";
+  const activeStyle = 'underline underline-offset-4';
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0">
-      <ul className="flex items-center gap-3">
-        <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+    <nav className='flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0'>
+      <ul className='flex items-center gap-3'>
+        <li className='font-semibold text-lg'>
+          <NavLink to='/'>Shopi</NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to='/'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -19,7 +19,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/clothes"
+            to='/clothes'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Clothes
@@ -27,7 +27,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/electronics"
+            to='/electronics'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Electronics
@@ -35,7 +35,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/furnitures"
+            to='/furnitures'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Furnitures
@@ -43,7 +43,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/toys"
+            to='/toys'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Toys
@@ -51,7 +51,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/others"
+            to='/others'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Others
@@ -59,11 +59,11 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <ul className="flex items-center gap-3">
-        <li className="text-black/60">jecv.dev@gmail.com</li>
+      <ul className='flex items-center gap-3'>
+        <li className='text-black/60'>jecv.dev@gmail.com</li>
         <li>
           <NavLink
-            to="/my-orders"
+            to='/my-orders'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Orders
@@ -71,7 +71,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/my-account"
+            to='/my-account'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Account
@@ -79,7 +79,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/sign-in"
+            to='/sign-in'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Sign In
