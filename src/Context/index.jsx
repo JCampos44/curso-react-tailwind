@@ -12,7 +12,15 @@ export const ShoppingCartProvider = ({ children }) => {
   const closeProductDetail = () => setIsProductDetailOpen(false);
 
   // Product Detail - Show Product
-  const [productToShow, setProductToShow] = useState({});
+  const [productToShow, setProductToShow] = useState({
+    title: '',
+    price: 0,
+    description: '',
+    images: [],
+  });
+
+  // Shopping Cart - Add products to cart
+  const [cartProducts, setCartProducts] = useState([]);
 
   return (
     <ShoppingCartContext.Provider
@@ -24,6 +32,8 @@ export const ShoppingCartProvider = ({ children }) => {
         closeProductDetail,
         productToShow,
         setProductToShow,
+        cartProducts,
+        setCartProducts,
       }}
     >
       {children}
