@@ -6,13 +6,17 @@ const Card = (data) => {
   const context = useContext(ShoppingCartContext);
 
   const showProduct = (productDetail) => {
+    context.closeCheckoutSideMenu();
     context.openProductDetail();
     context.setProductToShow(productDetail);
   };
 
-  const addProductsToCart = (productData) => {
+  const addProductsToCart = (e, productData) => {
+    e.stopPropagation();
     context.setCount(context.count + 1);
     context.setCartProducts([...context.cartProducts, productData]);
+    context.closeProductDetail();
+    context.openCheckoutSideMenu();
   };
 
   return (
@@ -32,8 +36,7 @@ const Card = (data) => {
         <button
           className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
           onClick={(e) => {
-            e.stopPropagation();
-            addProductsToCart(data);
+            addProductsToCart(e, data);
           }}
         >
           <PlusIcon className='size-4' />
