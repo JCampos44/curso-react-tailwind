@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { ShoppingCartContext } from '../../Context';
 import { useContext } from 'react';
 import { ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { totalPrice } from '../../utils';
 
 const Navbar = () => {
   const activeStyle = 'underline underline-offset-4';
