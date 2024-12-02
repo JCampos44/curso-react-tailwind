@@ -8,6 +8,19 @@ import CheckoutSideMenu from '../../Components/CheckoutSideMenu';
 function Home() {
   const context = useContext(ShoppingCartContext);
 
+  const renderView = () => {
+    const itemsToRender =
+      context.searchByTitle?.length > 0 || context.searchByCategory?.length > 0
+        ? context.filteredItems
+        : context.items;
+
+    if (itemsToRender?.length > 0) {
+      return itemsToRender?.map((item) => <Card key={item.id} {...item} />);
+    }
+
+    return <p>No results found.</p>;
+  };
+
   return (
     <Layout>
       <div className='flex items-center justify-center relative w-80 mb-4'>
@@ -22,9 +35,7 @@ function Home() {
       />
 
       <div className='grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-screen-lg'>
-        {context.items?.map((item) => (
-          <Card key={item.id} {...item} />
-        ))}
+        {renderView()}
       </div>
       <ProductDetail />
       <CheckoutSideMenu />
